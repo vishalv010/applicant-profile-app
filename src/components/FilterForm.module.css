@@ -1,0 +1,10 @@
+.label {
+    margin: 1rem;
+}
+.formControl {
+    padding: 6px;
+    font-size: 1rem
+}
+.control {
+    margin-bottom: 2rem;
+}

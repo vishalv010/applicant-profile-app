@@ -1,0 +1,18 @@
+.table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.tableWrapper {
+    margin: 1rem;
+}
+.inputRow {
+   font-size: 1rem; 
+}
+.noRecords {
+    text-align: center;
+}
+.actionButton {
+    margin-right: 0.25rem;
+}

@@ -2,22 +2,23 @@ import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Typography from "@mui/material/Typography";
+import styles from "./ApplicantCard.module.css";
 import { Button, CardActionArea, CardActions } from "@mui/material";
+import { SkillsList } from "./SkillsList";
 
 export const ApplicantCard = (props) => {
   const { applicantData, onEditProfile } = props;
   return (
-    <Card sx={{ maxWidth: 345, boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px'}}>
+    <Card sx={styles.card}>
       <CardActionArea>
         <CardMedia
           component="img"
           height="140"
           image={applicantData.url}
-          alt="green iguana"
+          alt={applicantData.id}
         />
       </CardActionArea>
-      <CardActions sx={{ justifyContent: "center" }}>
+      <CardActions sx={styles.editCard}>
         <Button
           size="small"
           color="primary"
@@ -26,21 +27,11 @@ export const ApplicantCard = (props) => {
           Edit Profile
         </Button>
       </CardActions>
-      {applicantData?.skills?.length > 0 &&<CardContent>
-        {
-          applicantData.skills.map((data) => {
-            return (
-              <Typography
-                gutterBottom
-                variant="h5"
-                component="div"
-                key={data.id}
-              >
-                {data.skill}
-              </Typography>
-            );
-          })}
-      </CardContent>}
+      {applicantData?.skills?.length > 0 && (
+        <CardContent>
+          <SkillsList applicantData={applicantData} />
+        </CardContent>
+      )}
     </Card>
   );
 };
